@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face {
+            font-family: poppins;
+            src: url(Fonts/Poppins-Regular.ttf);
+        }
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+            font-family: poppins;
+            font-size: clamp(20px, 5vh, 64px);
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to right top, #0a5560, #005971, #175b81, #385b8d, #5a5992, #725894, #895793, #9f558e, #b2568c, #c45887, #d55c80, #e36178);
+        }
+
+        .wrapper{
+            display: inline-flex;
+            
+        }
+        
+        .wrapper .static_txt{
+            color: white;
+            padding-top: 5px;
+            font-weight: 400;
+            
+
+        }
+
+        .wrapper .dynamic_txt{
+            margin-left: 15px;
+            line-height: 80px;
+            height: 80px;
+            overflow: hidden;
+
+            
+        }
+
+        .wrapper .dynamic_txt li{
+           position: relative;
+           top: 0;
+           color: rgb(179, 12, 40);
+           font-weight: 500;
+           animation: slide 12s steps(6) infinite;
+           
+        }
+
+        @keyframes slide {
+            100%{
+                top: -480px;
+            }
+        }
+
+
+        
+
+        .wrapper .dynamic_txt li span{
+            position: relative;
+            background-color: rgb(13, 13, 43);
+            padding-right: 10px;
+
+        }
+        .wrapper .dynamic_txt li span::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0px;
+            height: 100%;
+            width: 100%;
+            background-color: rgb(13, 13, 43);
+            border-left: 5px solid black;
+            animation: typing 2s infinite;
+            animation-timing-function: ease-out;
+        }
+
+        @keyframes typing {
+            100%{
+                left: 100%;
+                width: 0;
+                
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .wrapper .dynamic_txt{
+            line-height: 60px;
+            height: 50px;
+            
+            }
+
+            @keyframes slide {
+                100%{
+                    top: -360px;
+                }
+            }
+            .wrapper .static_txt{
+                padding-top: 0px;
+            }
+
+        }
+
+
+        
+
+
+    </style>
+</head>
+<body>
+        <div class="wrapper">
+            <div class="static_txt"> I'm </div>
+                
+            
+            
+            <ul class="dynamic_txt">
+                <li><span>Simeon.</span></li>
+                <li><span>a Developer.</span></li>
+                <li><span>a Designer.</span></li>
+                <li><span>an Engineer.</span></li>
+                <li><span>the Future.</span></li>
+                <li><span>Me.</span></li>
+            </ul>
+            
+        </div>
+    
+</body>
+</html>
